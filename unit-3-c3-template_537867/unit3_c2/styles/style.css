@@ -1,0 +1,13 @@
+input{
+
+    margin-top: 10px;
+    
+   }
+   #form{
+     display: grid;
+     justify-content: center;
+   }
+   #navbar{
+      display: flex;
+      justify-content: space-between;
+   }

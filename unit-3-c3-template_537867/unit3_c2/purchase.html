@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Purchases</title>
+  </head>
+  <body>
+    <h3 id ="wallet_balance">0</h3>
+    <!-- Wallet balence id:- "wallet_balance" (only number). -->
+    <!-- - All the purchased voucher will be appended in div with id as "purchased_vouchers".
+  - The remaining balance will show on the page inside h3 tag with id as "balance" -->
+  <div id="purchased_vouchers"></div>
+  </body>
+</html>
+<script>
+
+let buyV=JSON.parse(localStorage.getItem("purchase"));
+
+let totalSum=buyV.reduce(function (sum,el) {
+  return sum+Number(el.price);
+},0);
+
+let sum=document.getElementById("wallet_balance");
+sum.innerHTML=totalsum;
+
+buyV.map(function (el) {
+
+
+  
+  let div = document.createElement("div");
+
+   
+let name = document.createElement("p");
+name.innerText = el.name;
+
+let image = document.createElement("img");
+image.src = el.image;
+
+
+let price = document.createElement("p");
+price.innerText = el.price;
+
+
+div.append(image, name, price, btn)
+
+document.getElementById("purchased_vouchers").append(div);
+})
+
+
+
+</script>
